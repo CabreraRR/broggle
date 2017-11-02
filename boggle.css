@@ -95,14 +95,6 @@ h3 {
     margin: auto;
 }
 
-.shown {
-    display: block;
-    margin: auto;
-}
-
-.hidden {
-    display: block;
-}
 
 li {
     list-style: none;
