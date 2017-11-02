@@ -14,6 +14,7 @@ let points = [];
 let counter = 10;
 let score = 0;
 
+document.getElementById('open').className = '.shown';
 
 //random letter generator
 function randomLetter() {
@@ -57,6 +58,7 @@ start.addEventListener('click', () => {
     wordList = [];
     points = [];
     counter = 10;
+    modal.className = '.hidden';
     updateTime();
     updateDisplay();
     populate();
@@ -64,15 +66,16 @@ start.addEventListener('click', () => {
 
 //Timer Counts down from Game Start
 function updateTime() {
-    if (counter > 0) {
+    if (counter >= 0) {
         timer.innerHTML = counter;
         --counter;
         setTimeout(updateTime, 1000);
-    } else {
-        modal.className = '.shown'
     }
 }
 
+if (counter == 0) {
+    modal.className = '.shown';
+}
 
 //Submit button will check word against dictionary
 

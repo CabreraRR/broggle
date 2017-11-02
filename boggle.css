@@ -92,13 +92,16 @@ h3 {
 }
 
 .modal {
-    width: 80vw;
-    height: 100vh;
     margin: auto;
 }
 
 .shown {
-	display: block;
+    display: block;
+    margin: auto;
+}
+
+.hidden {
+    display: block;
 }
 
 li {
