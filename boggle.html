@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bro-ggle</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <link rel="stylesheet" href="boggle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 left">
+                <div class="title">
+                    <h1>bro-ggle...</h1>
+                </div>
+                <div>
+                    <h3>Score: <span id="score">0</span></h3>
+                </div>
+                <table id="list" style="width:100%">
+                    <tr>
+                        <th>Words</th>
+                        <th>Score</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-9 right">
+                <div class="row display-space">
+                    <div class="col-3">
+                        <button id="submit" class="btn-lg btn-primary">Submit</button>
+                    </div>
+                    <div class="col-6">
+                        <div id="display" class="active">WORD</div>
+                    </div>
+                    <div class="col-3">
+                        <button id="clear" class="btn-lg btn-warning">Clear</button>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div id="0" class="letter-box box-disabled">M</div>
+                    <div id="1" class="letter-box">E</div>
+                    <div id="2" class="letter-box">O</div>
+                    <div id="3" class="letter-box">W</div>
+                    <div id="4" class="letter-box">M</div>
+                    <div id="5" class="letter-box">E</div>
+                    <div id="6" class="letter-box">O</div>
+                    <div id="7" class="letter-box">W</div>
+                    <div id="8" class="letter-box">M</div>
+                    <div id="9" class="letter-box">E</div>
+                    <div id="10" class="letter-box">O</div>
+                    <div id="11" class="letter-box">W</div>
+                    <div id="12" class="letter-box">M</div>
+                    <div id="13" class="letter-box">E</div>
+                    <div id="14" class="letter-box">O</div>
+                    <div id="15" class="letter-box">W</div>
+                </div>
+                <div class="time">
+                    <h2>Time: <span id="count" class="count">180</span> Seconds</h2>
+                </div>
+                <div class="buttons">
+                    <button id="quit" class="btn-lg btn-danger">Quit</button>
+                    <button data-toggle="modal" data-target="#open"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="open" class="modal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1>bro-ggle...</h1>
+                </div>
+                <div class="modal-body">
+                    <h3 class="bold">Rules</h3>
+                    <div class="row">
+                        <div class="col-6">
+                            <div>Players have three minutes (shown by the countdown timer) to find as many words as they can in the grid, according to the following rules: </div>
+                            <div>The letters must be adjoining in a 'chain'. (Letter cubes in the chain may be adjacent horizontally, vertically, or diagonally.) </div>
+                            <div>Words must contain at least three letters. </div>
+                            <div>No letter cube may be used more than once within a single word.</div>
+                        </div>
+                        <div class="col-6">
+                            <h4 class="bold">The scoring is as follows: </h4>
+                            <ul>
+                                <li>Fewer than 3 Letters: <span class="bold">no score</span> </li>
+                                <li>3 Letters: <span class="bold">1 point</span> </li>
+                                <li>4 Letters: <span class="bold">1 point</span> </li>
+                                <li>5 Letters: <span class="bold">2 points</span> </li>
+                                <li>6 Letters: <span class="bold">3 points</span> </li>
+                                <li>7 Letters: <span class="bold">4 points</span> </li>
+                                <li>8 or More Letters: <span class="bold">11 point</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-lg btn-primary">START GAME</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="over" class="modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1>Game Over bro....</h1>
+                </div>
+                <div class="modal-body">
+                    <h3>You scored <span id="score">*INSERT SCORE HERE*</span></h3>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-lg btn-primary">New Game?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="boggle.js"></script>
+</body>
+
+</html>
